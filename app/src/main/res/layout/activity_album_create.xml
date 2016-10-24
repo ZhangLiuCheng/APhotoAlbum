@@ -13,32 +13,33 @@
         android:background="?attr/colorPrimary">
 
         <ImageView
-            android:id="@+id/personal"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:onClick="back"
             android:scaleType="center"
-            android:src="@drawable/personal" />
+            android:src="@drawable/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="首页"
+            android:text="创建相册"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/albumFunc"
+        <TextView
+            android:id="@+id/submit"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:scaleType="center"
-            android:src="@drawable/add" />
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

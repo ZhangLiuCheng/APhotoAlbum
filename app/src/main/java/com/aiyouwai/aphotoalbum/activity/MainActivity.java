@@ -34,6 +34,12 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
         startActivity(intent);
     }
 
+    @OnClick(R.id.albumFunc)
+    public void albumFunc() {
+        AlbumFuncFragment fragment = AlbumFuncFragment.newInstance();
+        fragment.show(getSupportFragmentManager(), null);
+    }
+
     private void setupRecyclerView(List<Album> links) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView);
 

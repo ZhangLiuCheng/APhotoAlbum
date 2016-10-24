@@ -3,7 +3,9 @@ package com.aiyouwai.aphotoalbum.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatDialogFragment;
+import android.util.DisplayMetrics;
 import android.view.View;
+
 
 public class AywBaseDialogFragment extends AppCompatDialogFragment {
 
@@ -14,14 +16,25 @@ public class AywBaseDialogFragment extends AppCompatDialogFragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics( dm );
+        getDialog().getWindow().setLayout(dm.widthPixels, getDialog().getWindow().getAttributes().height);
+
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getView().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
+        if (isCancelable()) {
+            getView().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dismiss();
+                }
+            });
+        }
     }
 
 }

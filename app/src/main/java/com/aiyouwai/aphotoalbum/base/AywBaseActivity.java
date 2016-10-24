@@ -36,7 +36,7 @@ public class AywBaseActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                back();
+                back(null);
             }
         });
         TextView titleView = (TextView) toolbar.findViewById(R.id.titleView);
@@ -50,13 +50,13 @@ public class AywBaseActivity extends AppCompatActivity {
     /**
      * 导航栏和物理按键返回点击调用该方法.
      */
-    public void back() {
+    public void back(View view) {
         finish();
     }
 
     @Override
     public void onBackPressed() {
-        back();
+        back(null);
     }
 
     /**
