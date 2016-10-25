@@ -37,4 +37,11 @@ public class AlbumFuncFragment extends AywBaseDialogFragment {
         Intent intent = new Intent(getActivity(), AlbumCreateActivity.class);
         startActivity(intent);
     }
+
+    @OnClick(R.id.apply)
+    public void apply() {
+        dismiss();
+        Intent intent = new Intent(getActivity(), AlbumApplyActivity.class);
+        startActivity(intent);
+    }
 }

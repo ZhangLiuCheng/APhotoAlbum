@@ -53,6 +53,7 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
 
     @Override
     public void onItemClick(View view, Album item) {
-
+        Intent intent = new Intent(this, AlbumInfoActivity.class);
+        startActivity(intent);
     }
 }
