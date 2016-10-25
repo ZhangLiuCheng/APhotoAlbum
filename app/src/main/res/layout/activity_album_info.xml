@@ -12,14 +12,16 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary">
 
-        <ImageView
+        <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="返回"
             android:onClick="back"
-            android:scaleType="center"
-            android:src="@drawable/black" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,6 +31,17 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
 
     </RelativeLayout>
 
@@ -36,5 +49,5 @@
         android:id="@+id/recylerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp" />
+        android:layout_margin="5dp" />
 </LinearLayout>

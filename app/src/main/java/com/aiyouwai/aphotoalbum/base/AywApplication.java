@@ -8,6 +8,8 @@ import android.os.StrictMode;
 
 import com.aiyouwai.aphotoalbum.BuildConfig;
 import com.aiyouwai.aphotoalbum.utils.LogUtil;
+import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
 
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +26,16 @@ public class AywApplication extends Application {
             return;
         }
 
+        initPicasso();
         setStrictMode();
+    }
+
+    // 初始化Picasso
+    private void initPicasso() {
+        Picasso picasso = new Picasso.Builder(getApplicationContext())
+                .downloader(new OkHttp3Downloader(getApplicationContext()))
+                .build();
+        Picasso.setSingletonInstance(picasso);
     }
 
     // 启用严苛模式

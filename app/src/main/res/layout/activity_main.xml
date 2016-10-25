@@ -12,15 +12,18 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary">
 
-        <ImageView
+
+        <TextView
             android:id="@+id/personal"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="个人"
             android:onClick="back"
-            android:scaleType="center"
-            android:src="@drawable/personal" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
