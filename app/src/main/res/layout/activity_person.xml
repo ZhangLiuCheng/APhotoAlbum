@@ -33,4 +33,25 @@
 
     </RelativeLayout>
 
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="30dp" />
+
+        <ImageView
+            android:id="@+id/pickPhoto"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="30dp"
+            android:background="@drawable/shape_button_2"
+            android:scaleType="center"
+            android:src="@drawable/add" />
+    </FrameLayout>
 </LinearLayout>

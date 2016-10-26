@@ -18,8 +18,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="返回"
             android:onClick="back"
+            android:text="返回"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
@@ -45,9 +45,24 @@
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recylerView"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp" />
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recylerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp" />
+
+        <ImageView
+            android:id="@+id/pickPhoto"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="30dp"
+            android:background="@drawable/shape_button_2"
+            android:scaleType="center"
+            android:src="@drawable/add" />
+    </FrameLayout>
 </LinearLayout>
