@@ -1,6 +1,6 @@
 package com.aiyouwai.aphotoalbum.activity;
 
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -35,6 +35,12 @@ public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFra
         setupRecylerView();
     }
 
+    @OnClick(R.id.setting)
+    public void setting() {
+        Intent intent = new Intent(this, AlbumSettingActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.pickPhoto)
     public void pickPhoto() {
         pickPhoto.setVisibility(View.GONE);
@@ -56,8 +62,5 @@ public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFra
     @Override
     public void onBitmap(String path) {
         pickPhoto.setVisibility(View.VISIBLE);
-        ImageView image = (ImageView) findViewById(R.id.image);
-        Bitmap bitmap = BitmapFactory.decodeFile(path);
-        image.setImageBitmap(bitmap);
     }
 }

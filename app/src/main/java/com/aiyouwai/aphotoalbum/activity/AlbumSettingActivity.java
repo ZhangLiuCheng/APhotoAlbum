@@ -18,36 +18,33 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AlbumCreateActivity extends AywBaseActivity implements CompoundButton.OnCheckedChangeListener,
+public class AlbumSettingActivity extends AywBaseActivity implements CompoundButton.OnCheckedChangeListener,
         AdapterView.OnItemSelectedListener {
 
-    @BindView(R.id.spinnerPrivacy) Spinner spinner;
-    @BindView(R.id.privacy) Switch privacy;
+    @BindView(R.id.switchPrivacy) Switch switchPrivacy;
+    @BindView(R.id.spinnerPrivacy) Spinner spinnerPrivacy;
+    @BindView(R.id.spinnerShow) Switch spinnerShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album_create);
+        setContentView(R.layout.activity_album_setting);
         ButterKnife.bind(this);
 
         setupPrivacy();
-        setupSpinner();
     }
 
     // 是否为私密相册
     private void setupPrivacy() {
-        privacy.setOnCheckedChangeListener(this);
-    }
-
-    private void setupSpinner() {
+        switchPrivacy.setOnCheckedChangeListener(this);
         List<String> data = new ArrayList<>();
         data.add("进入空相册");
         data.add("提示密码错误");
 
         ArrayAdapter adapter= new ArrayAdapter<>(this, R.layout.item_spinner_album, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+        spinnerPrivacy.setAdapter(adapter);
+        spinnerPrivacy.setOnItemSelectedListener(this);
     }
 
     @Override
