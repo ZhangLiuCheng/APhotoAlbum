@@ -8,21 +8,29 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.aiyouwai.aphotoalbum.R;
+import com.aiyouwai.aphotoalbum.entity.Album;
 import com.aiyouwai.aphotoalbum.entity.Photo;
+import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class PhotoStaggerdAdapter extends RecyclerView.Adapter<PhotoStaggerdAdapter.Holder> {
+public class PhotoStaggerdAdapter extends RecyclerView.Adapter<PhotoStaggerdAdapter.Holder> implements View.OnClickListener {
 
     private Context context;
     private LayoutInflater inflater;
     private List<Photo> data;
 
+    private RecyclerItemLisener<Photo> listener;
+
     public PhotoStaggerdAdapter(Context context, List<Photo> data) {
         this.context = context;
         this.inflater = LayoutInflater.from(context);
         this.data = data;
+    }
+
+    public void setListener(RecyclerItemLisener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -38,7 +46,17 @@ public class PhotoStaggerdAdapter extends RecyclerView.Adapter<PhotoStaggerdAdap
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
+        holder.itemView.setTag(data.get(position));
+        holder.itemView.setOnClickListener(this);
         holder.setData(data.get(position));
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (null != listener) {
+            Photo ln = (Photo) v.getTag();
+            listener.onItemClick(v, ln);
+        }
     }
 
     class Holder extends RecyclerView.ViewHolder {

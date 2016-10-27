@@ -12,12 +12,14 @@ import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.adapter.PhotoStaggerdAdapter;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 import com.aiyouwai.aphotoalbum.entity.Photo;
+import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFragment.ImagePickerListener {
+public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFragment.ImagePickerListener,
+        RecyclerItemLisener<Photo> {
 
     @BindView(R.id.recylerView) RecyclerView recyclerView;
     @BindView(R.id.pickPhoto) ImageView pickPhoto;
@@ -50,6 +52,7 @@ public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFra
 
     private void setupRecylerView() {
         adapter = new PhotoStaggerdAdapter(this, Photo.getTestData());
+        adapter.setListener(this);
 
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
@@ -60,5 +63,11 @@ public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFra
     @Override
     public void onBitmap(String path) {
         pickPhoto.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onItemClick(View view, Photo item) {
+        Intent intent = new Intent(this, PhotoDisplayActivity.class);
+        startActivity(intent);
     }
 }
