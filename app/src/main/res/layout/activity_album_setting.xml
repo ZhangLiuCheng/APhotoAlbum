@@ -210,11 +210,48 @@
                     android:textSize="15sp" />
 
                 <Spinner
-                    android:id="@+id/spinnerShow"
+                    android:id="@+id/spinnerDisplay"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableRight="@drawable/arraw_right_black"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="管理相册成员"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0" />
+
+            <TextView
+                android:id="@+id/invite"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableRight="@drawable/arraw_right_black"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="邀请好友加入"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -18,8 +18,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="返回"
             android:onClick="back"
+            android:text="返回"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
@@ -33,25 +33,27 @@
 
     </RelativeLayout>
 
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="30dp" />
+    <LinearLayout
+        android:id="@+id/userLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/pickPhoto"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="30dp"
-            android:background="@drawable/shape_button_2"
-            android:scaleType="center"
-            android:src="@drawable/add" />
-    </FrameLayout>
+            android:id="@+id/portrait"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/pc_head_pic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="点击头像登录" />
+    </LinearLayout>
+
+
 </LinearLayout>
