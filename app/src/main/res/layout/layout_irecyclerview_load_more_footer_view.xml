@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <TextView
+        android:id="@+id/theEndView"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="THE END"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="NETWORK ERROR, TRY AGAIN" />
+
+    <ProgressBar
+        android:id="@+id/loadingView"
+        style="?android:progressBarStyleInverse"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center" />
+
+</merge>

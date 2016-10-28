@@ -20,8 +20,8 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="个人"
             android:onClick="back"
+            android:text="个人"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
@@ -44,9 +44,12 @@
             android:src="@drawable/add" />
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <com.aspsine.irecyclerview.IRecyclerView
         android:id="@+id/recylerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="10dp" />
+        app:loadMoreEnabled="true"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_refresh_header" />
 </LinearLayout>

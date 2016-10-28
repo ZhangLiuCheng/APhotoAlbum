@@ -11,6 +11,8 @@ public class Album {
 
     private String label;
 
+    private boolean isPrivacy;
+
     public Album(int icon, String label) {
         this.icon = icon;
         this.label = label;
@@ -32,11 +34,21 @@ public class Album {
         this.label = label;
     }
 
+    public boolean isPrivacy() {
+        return isPrivacy;
+    }
+
+    public void setPrivacy(boolean privacy) {
+        isPrivacy = privacy;
+    }
+
     public static List<Album> testData() {
         List<Album> data = new ArrayList<>();
         data.add(new Album(R.drawable.test1, "宝宝成长记"));
         data.add(new Album(R.drawable.test2, "大学同学聚会"));
-        data.add(new Album(R.drawable.test3, "风景"));
+        data.add(new Album(R.drawable.test3, "我和小米"));
+        data.add(new Album(R.drawable.test2, "老乡会"));
+        data.get(2).setPrivacy(true);
         return data;
     }
 }

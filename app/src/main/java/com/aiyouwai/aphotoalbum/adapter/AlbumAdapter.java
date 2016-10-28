@@ -29,6 +29,22 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.Holder> impl
         this.data = data;
     }
 
+    public void setData(List<Album> images) {
+        data.clear();
+        append(images);
+    }
+
+    public void append(List<Album> images) {
+        int positionStart = data.size();
+        int itemCount = images.size();
+        data.addAll(images);
+        if (positionStart > 0 && itemCount > 0) {
+            notifyItemRangeInserted(positionStart, itemCount);
+        } else {
+            notifyDataSetChanged();
+        }
+    }
+
     public void setListener(RecyclerItemLisener listener) {
         this.listener = listener;
     }
@@ -65,6 +81,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.Holder> impl
         ImageView icon;
         @BindView(R.id.name)
         TextView name;
+        @BindView(R.id.privacy)
+        ImageView privacy;
 
         public Holder(View itemView) {
             super(itemView);
@@ -74,6 +92,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.Holder> impl
         public void setData(Album album) {
             icon.setImageResource(album.getIcon());
             name.setText(album.getLabel());
+            privacy.setVisibility(album.isPrivacy() ? View.VISIBLE : View.GONE);
 //            Picasso.with(context)
 //                    .load(line.icon)
 //                    .into(icon);
