@@ -100,6 +100,7 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
             inputTitleDialog();
         } else {
             Intent intent = new Intent(this, AlbumInfoActivity.class);
+            intent.putExtra("album", item);
             startActivity(intent);
         }
     }
