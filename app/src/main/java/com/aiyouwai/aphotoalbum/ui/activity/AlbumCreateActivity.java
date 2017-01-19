@@ -1,6 +1,8 @@
 package com.aiyouwai.aphotoalbum.ui.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,8 +23,8 @@ import butterknife.ButterKnife;
 public class AlbumCreateActivity extends AywBaseActivity implements CompoundButton.OnCheckedChangeListener,
         AdapterView.OnItemSelectedListener {
 
-    @BindView(R.id.spinnerPrivacy) Spinner spinner;
-    @BindView(R.id.privacy) Switch privacy;
+    @BindView(R.id.spinnerPrivacy) AppCompatSpinner spinner;
+    @BindView(R.id.privacy) SwitchCompat privacy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +43,11 @@ public class AlbumCreateActivity extends AywBaseActivity implements CompoundButt
 
     private void setupSpinner() {
         List<String> data = new ArrayList<>();
-        data.add("进入空相册");
-        data.add("提示密码错误");
+        data.add("您初恋女友的名字？");
+        data.add("对你影响最深的一个人？");
+        data.add("你的幸运数字？");
+        data.add("你最爱的一个人？");
+        data.add("最难忘的地方？");
 
         ArrayAdapter adapter= new ArrayAdapter<>(this, R.layout.item_spinner_album, data);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
