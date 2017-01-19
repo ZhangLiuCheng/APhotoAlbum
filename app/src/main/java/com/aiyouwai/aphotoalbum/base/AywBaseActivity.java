@@ -8,8 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.aiyouwai.aphotoalbum.PhotoApplication;
 import com.aiyouwai.aphotoalbum.R;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.squareup.leakcanary.RefWatcher;
 
 public class AywBaseActivity extends AppCompatActivity {
 
@@ -80,4 +82,12 @@ public class AywBaseActivity extends AppCompatActivity {
 //        this.finish();
 //        overridePendingTransition(R.anim.activity_left_in, R.anim.activity_right_out);
 //    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RefWatcher refWatcher = PhotoApplication.getRefWatcher(this);
+        refWatcher.watch(this);
+    }
 }

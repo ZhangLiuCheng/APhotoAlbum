@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity;
+package com.aiyouwai.aphotoalbum.ui.activity.homepage;
 
 import android.app.ActivityOptions;
 import android.content.DialogInterface;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.aiyouwai.aphotoalbum.R;
+import com.aiyouwai.aphotoalbum.ui.activity.AlbumInfoActivity;
 import com.aiyouwai.aphotoalbum.ui.adapter.AlbumAdapter;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 import com.aiyouwai.aphotoalbum.model.entity.Album;
@@ -61,9 +62,9 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
     }
 
     @OnClick(R.id.albumFunc)
-    public void albumFunc() {
-        AlbumFuncFragment fragment = AlbumFuncFragment.newInstance();
-        fragment.show(getSupportFragmentManager(), null);
+    public void albumFunc(View view) {
+        AlbumNewFuncPopView popView = new AlbumNewFuncPopView(this);
+        popView.showAsDropDown(view, 0, 30);
     }
 
     @Override

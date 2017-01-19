@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:fitsSystemWindows="true"
+    android:clickable="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -73,24 +74,19 @@
         android:paddingRight="10dp">
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:drawableLeft="@drawable/icon_wifi"
             android:drawablePadding="10dp"
             android:text="仅wifi上传"
             android:textColor="#FFFFFF"
             android:textSize="15sp" />
 
-        <!--<TextView-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:drawablePadding="10dp"-->
-            <!--android:drawableRight="@drawable/icon_arraw_2"-->
-            <!--android:gravity="right" />-->
-
         <android.support.v7.widget.SwitchCompat
             android:layout_width="wrap_content"
+            app:trackTint="#4CD966"
+            app:thumbTint="#FFFFFF"
             android:layout_height="wrap_content" />
     </LinearLayout>
 

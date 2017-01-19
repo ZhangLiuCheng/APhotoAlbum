@@ -9,6 +9,8 @@ import android.os.StrictMode;
 import com.aiyouwai.aphotoalbum.BuildConfig;
 import com.aiyouwai.aphotoalbum.utils.LogUtil;
 import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 
 import java.util.Iterator;
@@ -16,9 +18,18 @@ import java.util.List;
 
 public class PhotoApplication extends Application {
 
+    public static RefWatcher getRefWatcher(Context context) {
+        PhotoApplication application = (PhotoApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
+    private RefWatcher refWatcher;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        refWatcher = LeakCanary.install(this);
+
 
         // onCreate会多次启动
         String processAppName = getAppName();

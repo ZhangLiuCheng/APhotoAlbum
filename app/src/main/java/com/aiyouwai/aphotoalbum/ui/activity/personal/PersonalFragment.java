@@ -36,12 +36,6 @@ public class PersonalFragment extends AywBaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personal, container, false);
         ButterKnife.bind(this, view);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtil.show(getActivity(), "点击");
-            }
-        });
         return view;
     }
 

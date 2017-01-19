@@ -17,11 +17,6 @@ import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 
 public class LoginActivity extends AywBaseActivity {
 
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-    private UserLoginTask mAuthTask = null;
-
     private EditText mTelephone;
     private EditText mPasswordView;
 
@@ -53,10 +48,6 @@ public class LoginActivity extends AywBaseActivity {
     }
 
     private void attemptLogin() {
-        if (mAuthTask != null) {
-            return;
-        }
-
         mTelephone.setError(null);
         mPasswordView.setError(null);
 
@@ -66,27 +57,21 @@ public class LoginActivity extends AywBaseActivity {
         boolean cancel = false;
         View focusView = null;
 
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
+        if (TextUtils.isEmpty(email) || !isEmailValid(email)) {
+            mTelephone.setError("请输入正确邮箱");
+            focusView = mTelephone;
             cancel = true;
         }
 
-        if (TextUtils.isEmpty(email)) {
-            mTelephone.setError(getString(R.string.error_field_required));
-            focusView = mTelephone;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mTelephone.setError(getString(R.string.error_invalid_email));
-            focusView = mTelephone;
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+            mPasswordView.setError("密码长度需大于6位");
+            focusView = mPasswordView;
             cancel = true;
         }
 
         if (cancel) {
             focusView.requestFocus();
-        } else {
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            return;
         }
     }
 
@@ -96,51 +81,6 @@ public class LoginActivity extends AywBaseActivity {
 
     private boolean isPasswordValid(String password) {
         return password.length() > 4;
-    }
-
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
-
-        private final String mEmail;
-        private final String mPassword;
-
-        UserLoginTask(String email, String password) {
-            mEmail = email;
-            mPassword = password;
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
-
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    return pieces[1].equals(mPassword);
-                }
-            }
-            return true;
-        }
-
-        @Override
-        protected void onPostExecute(final Boolean success) {
-            mAuthTask = null;
-
-            if (success) {
-                finish();
-            } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
-            }
-        }
-
-        @Override
-        protected void onCancelled() {
-            mAuthTask = null;
-        }
     }
 }
 

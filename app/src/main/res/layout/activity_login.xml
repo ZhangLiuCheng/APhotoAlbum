@@ -11,24 +11,21 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary">
 
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:gravity="center"
             android:onClick="back"
-            android:text="返回"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp" />
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@drawable/icon_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="登录"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
     </RelativeLayout>
@@ -36,6 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -60,7 +58,7 @@
                         android:id="@+id/telephone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="手机号"
+                        android:hint="请输入邮箱"
                         android:inputType="textPhonetic"
                         android:maxLines="1"
                         android:singleLine="true" />
@@ -69,13 +67,14 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
 
                     <EditText
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/prompt_password"
+                        android:hint="请输入密码"
                         android:imeActionId="@+id/login"
                         android:imeActionLabel="@string/action_sign_in_short"
                         android:imeOptions="actionUnspecified"
@@ -87,13 +86,13 @@
 
                 <Button
                     android:id="@+id/email_sign_in_button"
-                    style="?android:textAppearanceSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/action_sign_in"
-                    android:textStyle="bold" />
-
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/shape_button_0"
+                    android:text="登陆"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
