@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity;
+package com.aiyouwai.aphotoalbum.ui.activity.personal;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

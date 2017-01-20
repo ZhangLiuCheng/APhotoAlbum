@@ -3,15 +3,12 @@ package com.aiyouwai.aphotoalbum.ui.activity.personal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseFragment;
-import com.aiyouwai.aphotoalbum.ui.activity.LoginActivity;
-import com.aiyouwai.aphotoalbum.utils.ToastUtil;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

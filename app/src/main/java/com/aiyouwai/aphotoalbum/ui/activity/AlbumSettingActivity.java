@@ -36,10 +36,6 @@ public class AlbumSettingActivity extends AywBaseActivity implements CompoundBut
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-//        getWindow().setEnterTransition(new Explode());
-//        getWindow().setExitTransition(new Explode());
-
         setContentView(R.layout.activity_album_setting);
         ButterKnife.bind(this);
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.aiyouwai.aphotoalbum.PhotoApplication;
+import com.aiyouwai.aphotoalbum.utils.LogUtil;
 import com.squareup.leakcanary.RefWatcher;
 
 public abstract class AywBaseFragment extends Fragment {
@@ -28,7 +29,6 @@ public abstract class AywBaseFragment extends Fragment {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		RefWatcher refWatcher = PhotoApplication.getRefWatcher(getActivity());
-		refWatcher.watch(this);
+		LogUtil.v("onDestroy  " + getClass().getSimpleName());
 	}
 }

@@ -9,7 +9,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -17,7 +16,6 @@ import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseFragment;
 import com.aiyouwai.aphotoalbum.model.entity.Album;
 import com.aiyouwai.aphotoalbum.model.entity.Photo;
-import com.aiyouwai.aphotoalbum.ui.activity.PhotoDisplayActivity;
 import com.aiyouwai.aphotoalbum.ui.adapter.PhotoStaggerdAdapter;
 import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
 

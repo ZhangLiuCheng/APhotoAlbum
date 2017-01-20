@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity;
+package com.aiyouwai.aphotoalbum.ui.activity.album;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -21,9 +21,6 @@ public class PhotoDisplayActivity extends AywBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_display);
         ButterKnife.bind(this);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setupViewPage();
     }
 

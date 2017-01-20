@@ -1,10 +1,11 @@
-package com.aiyouwai.aphotoalbum.ui.activity;
+package com.aiyouwai.aphotoalbum.ui.activity.personal;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.personal.LoginActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -3,7 +3,6 @@ package com.aiyouwai.aphotoalbum.ui.activity.album;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +14,6 @@ import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseFragment;
 import com.aiyouwai.aphotoalbum.model.entity.Album;
 import com.aiyouwai.aphotoalbum.model.entity.Photo;
-import com.aiyouwai.aphotoalbum.ui.activity.PhotoDisplayActivity;
 import com.aiyouwai.aphotoalbum.ui.adapter.PhotoTimeAdapter;
 import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
 

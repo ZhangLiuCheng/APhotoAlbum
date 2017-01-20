@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.PersonActivity"
+            android:name=".ui.activity.personal.PersonActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -56,11 +56,11 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".ui.activity.personal.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.PhotoDisplayActivity"
+            android:name=".ui.activity.album.PhotoDisplayActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
