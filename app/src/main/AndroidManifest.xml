@@ -33,12 +33,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.AlbumCreateActivity"
+            android:name=".ui.activity.album.AlbumCreateActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.AlbumInfoActivity"
+            android:name=".ui.activity.album.AlbumInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

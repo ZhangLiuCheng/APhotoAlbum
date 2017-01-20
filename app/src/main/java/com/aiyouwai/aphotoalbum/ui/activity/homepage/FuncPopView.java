@@ -11,16 +11,16 @@ import android.widget.PopupWindow;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
-import com.aiyouwai.aphotoalbum.ui.activity.AlbumCreateActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.album.AlbumCreateActivity;
 
-public class AlbumNewFuncPopView {
+public class FuncPopView {
 
     private AywBaseActivity activity;
 
     private PopupWindow mPopupWindow;
     private View mView;
 
-    public AlbumNewFuncPopView(AywBaseActivity activity) {
+    public FuncPopView(AywBaseActivity activity) {
         this.activity = activity;
         initPopView();
         setupListener();
@@ -32,7 +32,7 @@ public class AlbumNewFuncPopView {
 
     private void initPopView() {
         int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 180, activity.getResources().getDisplayMetrics());
-        mView = LayoutInflater.from(activity).inflate(R.layout.popview_album_new_func, null);
+        mView = LayoutInflater.from(activity).inflate(R.layout.popview_func, null);
         mPopupWindow = new PopupWindow(mView, width, WindowManager.LayoutParams.WRAP_CONTENT, true);
         mPopupWindow.setAnimationStyle(0);
         mPopupWindow.getContentView().setOnTouchListener(new View.OnTouchListener() {
@@ -62,7 +62,7 @@ public class AlbumNewFuncPopView {
             @Override
             public void onClick(View v) {
                 mPopupWindow.dismiss();
-                AlbumJoinFragment fragment = AlbumJoinFragment.newInstance();
+                JoinFragment fragment = JoinFragment.newInstance();
                 fragment.show(activity.getSupportFragmentManager(), null);
             }
         });

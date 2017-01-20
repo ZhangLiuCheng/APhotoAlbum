@@ -26,4 +26,10 @@
         <item name="android:background">#00000000</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light">
+        <item name="android:colorForeground">#4CD966</item>
+        <item name="colorControlActivated">#4CD966</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+    </style>
 </resources>

@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity;
+package com.aiyouwai.aphotoalbum.ui.activity.album;
 
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatSpinner;

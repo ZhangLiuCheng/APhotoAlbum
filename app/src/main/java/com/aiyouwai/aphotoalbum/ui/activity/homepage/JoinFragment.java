@@ -15,20 +15,20 @@ import butterknife.OnClick;
 /**
  * 输入好友邀请码加入.
  */
-public class AlbumJoinFragment extends AywBaseDialogFragment {
+public class JoinFragment extends AywBaseDialogFragment {
 
-    public AlbumJoinFragment() {
+    public JoinFragment() {
     }
 
-    public static AlbumJoinFragment newInstance() {
-        AlbumJoinFragment fragment = new AlbumJoinFragment();
+    public static JoinFragment newInstance() {
+        JoinFragment fragment = new JoinFragment();
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_album_join, container, false);
+        View view = inflater.inflate(R.layout.fragment_join, container, false);
         ButterKnife.bind(this, view);
         return view;
     }

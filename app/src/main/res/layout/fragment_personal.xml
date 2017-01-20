@@ -85,8 +85,7 @@
 
         <android.support.v7.widget.SwitchCompat
             android:layout_width="wrap_content"
-            app:trackTint="#4CD966"
-            app:thumbTint="#FFFFFF"
+            app:theme="@style/SwitchStyle"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
