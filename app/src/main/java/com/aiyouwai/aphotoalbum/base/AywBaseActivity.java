@@ -1,5 +1,6 @@
 package com.aiyouwai.aphotoalbum.base;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -65,24 +66,40 @@ public class AywBaseActivity extends AppCompatActivity {
      * 设置push动画启动.
      * @param intent
      */
-//    public void startActivityWithAnim(Intent intent) {
-//        super.startActivity(intent);
-//        overridePendingTransition(R.anim.activity_right_in, R.anim.activity_left_out);
-//    }
-//
-//    public void startActivityForResultWithAnim(Intent intent, int requestCode) {
-//        super.startActivityForResult(intent, requestCode);
-//        overridePendingTransition(R.anim.activity_right_in, R.anim.activity_left_out);
-//    }
+    public void startActivityWithAnim(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.activity_right_in, R.anim.activity_left_out);
+    }
+
+    public void startActivityForResultWithAnim(Intent intent, int requestCode) {
+        super.startActivityForResult(intent, requestCode);
+        overridePendingTransition(R.anim.activity_right_in, R.anim.activity_left_out);
+    }
 
     /**
      * 设置pop动画返回.
      */
-//    public void finishActivityWithAnim() {
-//        this.finish();
-//        overridePendingTransition(R.anim.activity_left_in, R.anim.activity_right_out);
-//    }
+    public void finishActivityWithAnim() {
+        this.finish();
+        overridePendingTransition(R.anim.activity_left_in, R.anim.activity_right_out);
+    }
 
+    /**
+     * 底部升起动画启动
+     * @param intent
+     */
+    public void startActivityWithAnimRise(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.activity_rise_in, R.anim.activity_rise_out);
+    }
+
+    /**
+     * 下降动画结束
+     */
+    public void finishActivityWithAnimFall() {
+        this.finish();
+        overridePendingTransition(R.anim.activity_fall_in, R.anim.activity_fall_out);
+    }
 
     @Override
     protected void onDestroy() {

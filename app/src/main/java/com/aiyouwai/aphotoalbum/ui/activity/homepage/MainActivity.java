@@ -14,6 +14,7 @@ import android.widget.EditText;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.ui.activity.album.AlbumInfoActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.album.PasswordInputActivity;
 import com.aiyouwai.aphotoalbum.ui.adapter.AlbumAdapter;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 import com.aiyouwai.aphotoalbum.model.entity.Album;
@@ -95,6 +96,7 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
         });
     }
 
+    /*
     private void inputTitleDialog() {
         final EditText inputServer = new EditText(this);
         inputServer.setFocusable(true);
@@ -111,16 +113,21 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
                 });
         builder.show();
     }
+    */
 
     @Override
     public void onItemClick(View view, Album item) {
         if (item.isPrivacy()) {
-            inputTitleDialog();
+//            inputTitleDialog();
+
+            Intent intent = new Intent(this, PasswordInputActivity.class);
+            intent.putExtra("album", item);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         } else {
             Intent intent = new Intent(this, AlbumInfoActivity.class);
             intent.putExtra("album", item);
 //            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            startActivityWithAnim(intent);
         }
     }
 

@@ -62,13 +62,6 @@ public class AlbumInfoActivity extends AywBaseActivity implements ImagePickerFra
         album = (Album) savedInstanceState.getSerializable("album");
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        infoTimeFragment = null;
-//        infoGridFragment = null;
-    }
-
     @OnClick(R.id.setting)
     public void setting() {
         Intent intent = new Intent(this, AlbumSettingActivity.class);
