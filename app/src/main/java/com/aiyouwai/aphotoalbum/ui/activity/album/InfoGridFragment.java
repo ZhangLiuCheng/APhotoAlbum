@@ -21,6 +21,7 @@ import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class InfoGridFragment extends AywBaseFragment implements RecyclerItemLisener<Photo> {
 
@@ -68,6 +69,7 @@ public class InfoGridFragment extends AywBaseFragment implements RecyclerItemLis
         for (int i = 0; i < 5; i ++){
             ImageView imageView = new ImageView(getActivity());
             imageView.setImageResource(R.drawable.album_member);
+            imageView.setClickable(false);
             membersLayout.addView(imageView);
         }
     }
@@ -79,6 +81,12 @@ public class InfoGridFragment extends AywBaseFragment implements RecyclerItemLis
         adapter.setListener(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    @OnClick({R.id.members, R.id.memberLayout, R.id.scrollView})
+    public void membersLayout() {
+        Intent intent = new Intent(getActivity(), AlbumMemberActivity.class);
+        startActivity(intent);
     }
 
     @Override

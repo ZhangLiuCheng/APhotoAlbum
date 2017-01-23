@@ -1,24 +1,17 @@
 package com.aiyouwai.aphotoalbum.ui.activity.album;
 
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aiyouwai.aphotoalbum.R;
-import com.aiyouwai.aphotoalbum.ui.activity.AlbumSettingActivity;
 import com.aiyouwai.aphotoalbum.ui.activity.ImagePickerFragment;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
-import com.aiyouwai.aphotoalbum.model.db.UserPreferences;
 import com.aiyouwai.aphotoalbum.model.entity.Album;
-import com.aiyouwai.aphotoalbum.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

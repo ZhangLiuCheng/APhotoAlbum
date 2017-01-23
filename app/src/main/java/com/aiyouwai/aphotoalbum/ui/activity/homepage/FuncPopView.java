@@ -71,7 +71,7 @@ public class FuncPopView {
             @Override
             public void onClick(View v) {
 //                mPopupWindow.dismiss();
-//                Intent intent = new Intent(activity, AlbumApplyActivity.class);
+//                Intent intent = new Intent(activity, AlbumMemberActivity.class);
 //                activity.startActivity(intent);
             }
         });
