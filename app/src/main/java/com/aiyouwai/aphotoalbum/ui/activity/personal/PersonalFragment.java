@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseFragment;
+import com.aiyouwai.aphotoalbum.ui.activity.settings.MessageActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.settings.SettingsActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.settings.UploadActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,12 +42,24 @@ public class PersonalFragment extends AywBaseFragment {
     @OnClick(R.id.userLayout)
     public void headerClick() {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
-        startActivity(intent);
+        startActivityWithAnim(intent);
+    }
+
+    @OnClick(R.id.upload)
+    public void upload() {
+        Intent intent = new Intent(getActivity(), UploadActivity.class);
+        startActivityWithAnim(intent);
+    }
+
+    @OnClick(R.id.message)
+    public void message() {
+        Intent intent = new Intent(getActivity(), MessageActivity.class);
+        startActivityWithAnim(intent);
     }
 
     @OnClick(R.id.setting)
     public void setting() {
         Intent intent = new Intent(getActivity(), SettingsActivity.class);
-        startActivity(intent);
+        startActivityWithAnim(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity.personal;
+package com.aiyouwai.aphotoalbum.ui.activity.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +37,18 @@ public class SettingsActivity extends AywBaseActivity implements CompoundButton.
     @OnClick(R.id.invite)
     public void invite() {
         Intent intent = new Intent(this, AlbumInviteActivity.class);
-        startActivity(intent);
+        startActivityWithAnim(intent);
+    }
+
+    @OnClick(R.id.feedback)
+    public void feedback() {
+        Intent intent = new Intent(this, FeedbackActivity.class);
+        startActivityWithAnim(intent);
+    }
+
+    @OnClick(R.id.aboutUs)
+    public void aboutUs() {
+        Intent intent = new Intent(this, AboutUsActivity.class);
+        startActivityWithAnim(intent);
     }
 }

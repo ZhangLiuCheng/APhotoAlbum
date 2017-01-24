@@ -5,17 +5,13 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 import com.aiyouwai.aphotoalbum.model.entity.Member;
-import com.aiyouwai.aphotoalbum.model.entity.Photo;
 import com.aiyouwai.aphotoalbum.ui.adapter.AlbumMembersAdapter;
-import com.aiyouwai.aphotoalbum.ui.adapter.PhotoStaggerdAdapter;
 import com.aiyouwai.aphotoalbum.utils.RecyclerItemLisener;
-import com.aspsine.irecyclerview.IRecyclerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

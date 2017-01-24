@@ -93,30 +93,9 @@ public class MainActivity extends AywBaseActivity implements RecyclerItemLisener
         });
     }
 
-    /*
-    private void inputTitleDialog() {
-        final EditText inputServer = new EditText(this);
-        inputServer.setFocusable(true);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("请输入密码").setView(inputServer).setNegativeButton("取消", null);
-        builder.setPositiveButton("确认",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        String inputName = inputServer.getText().toString();
-                        Intent intent = new Intent(MainActivity.this, AlbumInfoActivity.class);
-                        startActivity(intent);
-                    }
-                });
-        builder.show();
-    }
-    */
-
     @Override
     public void onItemClick(View view, Album item) {
         if (item.isPrivacy()) {
-//            inputTitleDialog();
-
             Intent intent = new Intent(this, PasswordInputActivity.class);
             intent.putExtra("album", item);
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());

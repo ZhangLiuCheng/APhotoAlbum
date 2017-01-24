@@ -13,15 +13,17 @@ import android.widget.Switch;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.ImagePickerFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AlbumCreateActivity extends AywBaseActivity implements CompoundButton.OnCheckedChangeListener,
-        AdapterView.OnItemSelectedListener {
+        AdapterView.OnItemSelectedListener, ImagePickerFragment.ImagePickerListener {
 
     @BindView(R.id.spinnerPrivacy) AppCompatSpinner spinner;
     @BindView(R.id.privacy) SwitchCompat privacy;
@@ -34,6 +36,12 @@ public class AlbumCreateActivity extends AywBaseActivity implements CompoundButt
 
         setupPrivacy();
         setupSpinner();
+    }
+
+    @OnClick(R.id.cover)
+    public void cover() {
+        ImagePickerFragment pickerFragment = new ImagePickerFragment();
+        pickerFragment.showWithAnim(this);
     }
 
     // 是否为私密相册
@@ -68,6 +76,11 @@ public class AlbumCreateActivity extends AywBaseActivity implements CompoundButt
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onBitmap(String path) {
 
     }
 }
