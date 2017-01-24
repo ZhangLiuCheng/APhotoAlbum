@@ -1,20 +1,17 @@
 package com.aiyouwai.aphotoalbum.ui.activity.homepage;
 
 import android.app.ActivityOptions;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.EditText;
 
 import com.aiyouwai.aphotoalbum.R;
 import com.aiyouwai.aphotoalbum.ui.activity.album.AlbumInfoActivity;
-import com.aiyouwai.aphotoalbum.ui.activity.album.PasswordInputActivity;
+import com.aiyouwai.aphotoalbum.ui.activity.password.PasswordInputActivity;
 import com.aiyouwai.aphotoalbum.ui.adapter.AlbumAdapter;
 import com.aiyouwai.aphotoalbum.base.AywBaseActivity;
 import com.aiyouwai.aphotoalbum.model.entity.Album;

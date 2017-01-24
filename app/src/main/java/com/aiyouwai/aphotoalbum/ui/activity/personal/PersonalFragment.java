@@ -41,4 +41,10 @@ public class PersonalFragment extends AywBaseFragment {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
     }
+
+    @OnClick(R.id.setting)
+    public void setting() {
+        Intent intent = new Intent(getActivity(), SettingsActivity.class);
+        startActivity(intent);
+    }
 }

@@ -1,4 +1,4 @@
-package com.aiyouwai.aphotoalbum.ui.activity.album;
+package com.aiyouwai.aphotoalbum.ui.activity.password;
 
 import android.os.Bundle;
 import android.os.Handler;
